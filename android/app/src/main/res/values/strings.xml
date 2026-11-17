@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Блекаут</string>
+    <string name="title_activity_main">Блекаут</string>
+    <string name="package_name">com.sholohoff.blackout</string>
+    <string name="custom_url_scheme">com.sholohoff.blackout</string>
+</resources>

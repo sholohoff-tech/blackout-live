@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Блекаут</title>
+<style>html,body{margin:0;height:100%;background:#0f1115;color:#9aa1ad;font:600 14px sans-serif}#l{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}</style>
+</head>
+<body>
+<div id="l">Блекаут…</div>
+<script>
+/* Bootloader: runs the newest valid game version (downloaded update or the one inside the APK). */
+(async function(){
+  var BUNDLED=2, html=null;
+  try{
+    var s=JSON.parse(localStorage.getItem('bo_game')||'null');
+    if(s&&s.v>BUNDLED&&typeof s.html==='string'){
+      var tk='bo_try_'+s.v, tries=+(localStorage.getItem(tk)||0), ok=+(localStorage.getItem('bo_ok')||0);
+      if(ok>=s.v||tries<2){ localStorage.setItem(tk,String(tries+1)); html=s.html; }
+      else { localStorage.removeItem('bo_game'); }   // update crashed twice — fall back to the built-in version
+    }
+  }catch(e){}
+  if(!html){ var r=await fetch('game.html'); html=await r.text(); }
+  document.open(); document.write(html); document.close();
+})();
+</script>
+</body>
+</html>

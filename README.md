@@ -1,3 +1,7 @@
-# Блекаут — оновлення гри
+# Блекаут
 
-Цей репозиторій роздає свіжу версію гри застосунку «Блекаут». Тут лише готовий `game.html` і `version.json`.
+Мобільна гра про життя за графіком відключень.
+
+**Завантажити для Android:** https://github.com/sholohoff-tech/blackout-live/releases/latest/download/blackout.apk
+
+Тут же лежать `game.html` і `version.json` — з них гра сама оновлюється.

@@ -1,0 +1,14 @@
+{
+  "appId": "com.sholohoff.blackout",
+  "appName": "Блекаут",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#0f1115"
+  },
+  "plugins": {
+    "SystemBars": {
+      "style": "DARK",
+      "insetsHandling": "css"
+    }
+  }
+}
